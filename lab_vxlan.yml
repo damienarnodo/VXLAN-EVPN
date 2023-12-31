@@ -1,0 +1,32 @@
+name: vxlan-evpn-l2
+topology: 
+  nodes:
+    spine1:
+            kind: ceos
+            image: ceos:4.30.3M
+            mgmt-ipv4: 172.20.20.101
+    leaf1:
+            kind: ceos
+            image: ceos:4.30.3M
+            mgmt-ipv4: 172.20.20.11
+    leaf2:
+            kind: ceos
+            image: ceos:4.30.3M
+            mgmt-ipv4: 172.20.20.12
+    host1:
+            kind: linux
+            image: alpine:latest
+            binds:
+                  - hosts/h1_interfaces:/etc/network/interfaces
+            mgmt-ipv4: 172.20.20.21
+    host2:
+            kind: linux
+            image: alpine:latest
+            binds:
+                  - hosts/h2_interfaces:/etc/network/interfaces
+            mgmt-ipv4: 172.20.20.22
+  links:
+          - endpoints: ["spine1:eth1", "leaf1:eth1"]
+          - endpoints: ["spine1:eth2", "leaf1:eth2"]
+          - endpoints: ["leaf1:eth3", "host1:eth1"]
+          - endpoints: ["leaf2:eth3", "host2:eth1"]

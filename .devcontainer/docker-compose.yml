@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  containerlab:
+    image: ghcr.io/srl-labs/clab
+    platform: linux/amd64
+    command: tail -f /dev/null
+    privileged: true
+    network_mode: host
+    pid: host
+    ports:
+      - "50080:50080"
+    volumes:
+      - ..:/workspace
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/run/netns:/var/run/netns
+      - /etc/hosts:/etc/hosts
+      - /var/lib/docker/containers:/var/lib/docker/containers

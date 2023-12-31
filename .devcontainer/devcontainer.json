@@ -1,0 +1,25 @@
+{
+	"name": "ContainerLab",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "containerlab",
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [50080],
+
+	// Mount worspace on container
+	"workspaceFolder": "/workspace",
+
+	// Import ceos images
+	"postCreateCommand": "docker import images/ceos-lab-4.30.3M.tar.xz ceos:4.30.3M",
+
+	// Configure properties specific to VS Code.
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-vscode-remote.vscode-remote-extensionpack",
+				"ms-azuretools.vscode-docker",
+				"ms-python.python"
+			]
+		}
+	}
+}

@@ -1,0 +1,10 @@
+# Data
+.DS_Store
+.log
+
+# ContainerLab File
+clab-vxlan-evpn-l2
+.lab_vxlan.yml.bak
+
+# Network images
+images/*
