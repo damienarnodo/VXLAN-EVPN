@@ -7,4 +7,4 @@ clab-vxlan-evpn-l2
 .lab_vxlan.yml.bak
 
 # Network images
-images/*
+network_images/ceos-lab-4.30.3M.tar.xz
