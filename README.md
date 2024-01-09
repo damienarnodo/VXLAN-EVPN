@@ -10,7 +10,7 @@ The project directory is structured as follows:
 
 - `.devcontainer/devcontainer.json`: Configuration for the DevContainer environment.
 - `hosts`: Directory containing host configuration files for the lab.
-- `images/ceos-lab-4.30.3M.tar.xz`: Container image used for the lab nodes.
+- `network_images/ceos-lab-4.30.3M.tar.xz`: Container image used for the lab nodes.
 - `lab_vxlan.yml`: YAML file describing the VXLAN lab topology.
 
 ## Prerequisites
@@ -21,8 +21,9 @@ The project directory is structured as follows:
 
 ## Setup and Deployment
 
-1. **DevContainer Setup (Optional):**
-   If using DevContainer, ensure Docker and Docker Compose are installed on your machine. Open the project in a compatible IDE (like Visual Studio Code) and start the DevContainer environment.
+1. **DevContainer Setup (Optional):**  
+   If using DevContainer, ensure Docker and Docker Compose are installed on your machine.  
+   Open the project in a compatible IDE (like Visual Studio Code) and start the DevContainer environment.
 
 2. **ContainerLab Setup:**
    - Direct Installation: Install ContainerLab on your host machine.
@@ -36,3 +37,11 @@ The project directory is structured as follows:
 
 - Once the lab is deployed, you can access the individual nodes (spines and leaves) via CLI or SSH to configure and test VXLAN-EVPN functionalities.
 - Use the `hosts` directory to modify or apply specific configurations.
+
+## Project evolution
+
+### To Do
+
+- [ ] Enable Features
+- [ ] Set MTU
+- [ ] Map VLAN to VNI
