@@ -1,6 +1,7 @@
 # Data
 .DS_Store
 .log
+documentation/assets/images/diagrams/.$VXLAN.drawio.bkp
 
 # ContainerLab File
 clab-vxlan-evpn-l2
