@@ -10,7 +10,7 @@
 	"workspaceFolder": "/workspace",
 
 	// Import ceos images
-	"postCreateCommand": "docker import network_images/ceos-lab-4.30.3M.tar.xz",
+	"postCreateCommand": "docker import network_images/ceos-lab-4.30.3M.tar.xz ceos:4.30.3M",
 
 	// Configure properties specific to VS Code.
 	"customizations": {
