@@ -45,3 +45,6 @@ The project directory is structured as follows:
 - [ ] Enable Features
 - [ ] Set MTU
 - [ ] Map VLAN to VNI
+- [ ] Routed Link
+- [ ] Host Ports
+- [ ] Loopback interfaces
