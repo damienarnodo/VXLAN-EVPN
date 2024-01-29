@@ -1,5 +1,10 @@
 # VXLAN-EVPN Lab with ContainerLab
 
+## Sources
+
+- [ContainerLab](https://containerlab.dev)
+- [Virtual Data Center Network](https://medium.com/@aifakhri/bgp-evpn-and-vxlan-configuration-with-arista-veos-b1046c24d046)
+
 ## Overview
 
 This project provides a hands-on lab environment for understanding and experimenting with VXLAN-EVPN (Ethernet VPN) technology. Using ContainerLab, the lab sets up a VXLAN topology featuring 1 spine and 2 leaves nodes. The lab can be deployed directly on a PC with ContainerLab installed or through a DevContainer environment.
@@ -27,7 +32,7 @@ The project directory is structured as follows:
 
 2. **ContainerLab Setup:**
    - Direct Installation: Install ContainerLab on your host machine.
-   - Via DevContainer: Use the provided `devcontainer.json` to set up a ContainerLab environment.
+   - Via Terraform, documentation avalaible [here](https://github.com/MasqAs/AWS-ContainerLab-Deployment)
 
 3. **Start the Lab:**
    - Navigate to the project directory.
