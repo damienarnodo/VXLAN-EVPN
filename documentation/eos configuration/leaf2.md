@@ -55,3 +55,9 @@ neighbor 10.1.1.2 remote-as 65001
 address-family ipv4
 neighbor 10.1.1.0 activate
 ```
+
+To check peer status :
+
+```cli
+leaf1# show bgp summary
+```
