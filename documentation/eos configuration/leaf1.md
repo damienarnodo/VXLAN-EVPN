@@ -2,10 +2,26 @@
 
 ## Pre-config Setup
 
+Disable ZeroTouch provisioning :
+
+```config
+en
+zerotouch cancel
+```
+
 Enable the multi-agent configuration on Arista switch to be able to use EVPN feature
 
 ```config
+en
+conf
 service routing protocols model multi-agent
+```
+
+Enabling IP Routing 
+
+```config
+conf
+ip routing
 ```
 
 ## IP address Configuration

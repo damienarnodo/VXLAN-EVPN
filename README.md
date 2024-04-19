@@ -13,9 +13,8 @@ This project provides a hands-on lab environment for understanding and experimen
 
 The project directory is structured as follows:
 
-- `.devcontainer/devcontainer.json`: Configuration for the DevContainer environment.
 - `hosts`: Directory containing host configuration files for the lab.
-- `network_images/ceos-lab-4.30.3M.tar.xz`: Container image used for the lab nodes.
+- `network_images/ceos-lab-4.31.1F.tar.xz`: Container image used for the lab nodes.
 - `lab_vxlan.yml`: YAML file describing the VXLAN lab topology.
 
 ## Prerequisites
@@ -36,20 +35,9 @@ The project directory is structured as follows:
 
 3. **Start the Lab:**
    - Navigate to the project directory.
-   - Run `containerlab deploy -t lab_vxlan.yml` to deploy the lab topology.
+   - Run `sudo containerlab deploy -t lab_vxlan.yml` to deploy the lab topology.
 
 ## Usage
 
 - Once the lab is deployed, you can access the individual nodes (spines and leaves) via CLI or SSH to configure and test VXLAN-EVPN functionalities.
 - Use the `hosts` directory to modify or apply specific configurations.
-
-## Project evolution
-
-### To Do
-
-- [ ] Enable Features
-- [ ] Set MTU
-- [ ] Map VLAN to VNI
-- [ ] Routed Link
-- [ ] Host Ports
-- [ ] Loopback interfaces
