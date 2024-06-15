@@ -8,4 +8,4 @@ clab-vxlan-evpn-l2
 .lab_vxlan.yml.bak
 
 # Network images
-network_images/cEOS64-lab-4.31.1F.tar.xz
+network_images/*.tar.xz

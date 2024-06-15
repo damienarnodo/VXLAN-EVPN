@@ -14,7 +14,7 @@ This project provides a hands-on lab environment for understanding and experimen
 The project directory is structured as follows:
 
 - `hosts`: Directory containing host configuration files for the lab.
-- `network_images/ceos-lab-4.31.1F.tar.xz`: Container image used for the lab nodes.
+- `network_images/ceos-lab-4.32.0.1F.tar.xz`: Container image used for the lab nodes.
 - `lab_vxlan.yml`: YAML file describing the VXLAN lab topology.
 
 ## Prerequisites
@@ -35,6 +35,7 @@ The project directory is structured as follows:
 
 3. **Start the Lab:**
    - Navigate to the project directory.
+   - Add Arista image to Docker `docker import network_images/cEOS64-lab-4.32.0.1F.tar.xz ceos:4.32.0.1F`
    - Run `sudo containerlab deploy -t lab_vxlan.yml` to deploy the lab topology.
 
 ## Usage
