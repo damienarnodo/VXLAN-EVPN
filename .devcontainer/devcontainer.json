@@ -1,3 +1,14 @@
 {
-    "image": "ghcr.io/srl-labs/containerlab/clab-devcontainer:0.55.0"
+    "image": "ghcr.io/srl-labs/containerlab/clab-devcontainer:0.55.0",
+    "forwardPorts": [
+        50080
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-azuretools.vscode-docker",
+                "redhat.vscode-yaml"
+            ]
+        }
+    }
 }
