@@ -6,8 +6,7 @@ iface eth1 inet static
 
 auto eth1.50
 iface eth1.50 inet static
-    address 10.10.120.20
+    address 10.50.0.20
     netmask 255.255.255.0
-    gateway 10.10.120.1
     vlan-raw-device eth1
     vlan_id 50
