@@ -42,3 +42,11 @@ The project directory is structured as follows:
 
 - Once the lab is deployed, you can access the individual nodes (spines and leaves) via CLI or SSH to configure and test VXLAN-EVPN functionalities.
 - Use the `hosts` directory to modify or apply specific configurations.
+
+## Known Issues
+
+On Alpine Linux hosts 1 and 2, it is necessary to install the vlan package:
+
+```bash
+apk add vlan
+```

@@ -17,7 +17,7 @@ conf
 service routing protocols model multi-agent
 ```
 
-Enabling IP Routing 
+Enabling IP Routing
 
 ```config
 conf

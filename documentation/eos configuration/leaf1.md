@@ -75,7 +75,7 @@ neighbor 10.1.1.0 activate
 To check peer status :
 
 ```cli
-leaf1# show bgp summary
+show bgp summary
 ```
 
 ## BGP EVPN Overlay
@@ -104,4 +104,11 @@ neighbor 10.10.110.2 activate
 address-family ipv4
 no neighbor 10.10.110.2 activate
 redistribute connected route-map RMAP_VTEP
+```
+
+To check peer status :
+
+```cli
+show bgp summary
+show bgp evpn
 ```

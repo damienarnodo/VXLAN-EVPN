@@ -75,5 +75,40 @@ neighbor 10.1.1.0 activate
 To check peer status :
 
 ```cli
-leaf1# show bgp summary
+show bgp summary
+```
+
+## BGP EVPN Overlay
+
+```config
+interface Loopback0
+description VTEP
+ip address 10.10.110.2/32
+!
+ip prefix-list VTEP_PREFIX seq 10 permit 10.10.110.2/32
+!
+route-map RMAP_VTEP permit 10
+match ip address prefix-list VTEP_PREFIX
+!
+router bgp 65102
+neighbor 10.10.110.1 peer group VTEP_GROUP
+neighbor 10.10.110.1 remote-as 65101
+neighbor 10.10.110.1 update-source Loopback0
+neighbor VTEP_GROUP peer group
+neighbor VTEP_GROUP ebgp-multihop 5
+neighbor VTEP_GROUP send-community extended
+!
+address-family evpn
+neighbor 10.10.110.1 activate
+!
+address-family ipv4
+no neighbor 10.10.110.1 activate
+redistribute connected route-map RMAP_VTEP
+```
+
+To check peer status :
+
+```cli
+show bgp summary
+show bgp evpn
 ```
