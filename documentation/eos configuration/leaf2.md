@@ -112,3 +112,36 @@ To check peer status :
 show bgp summary
 show bgp evpn
 ```
+
+## VXLAN IRB Configuration
+
+```config
+ip virtual-router mac-address 00:0a:bc:10:11:02
+!
+vlan 50
+name IRB_SERVICE
+!
+interface Vlan50
+description CUSTOMER01_ANYCAST_GW
+vrf CUSTOMER01
+ip address virtual 10.50.0.1/24
+!
+interface Vxlan1
+description VTI
+vxlan source-interface Loopback0
+vxlan vlan 50 vni 1050
+vxlan vlan 50 flood vtep 10.10.110.1
+!
+router bgp 65102
+!
+vlan 50
+rd 10.50.0.0:65102
+route-target both 10.50.0.0:1200
+redistribute learned
+```
+
+Now, hosts can ping each other, and ping to the VSI work too.
+
+```config
+show vxlan address-table
+```
