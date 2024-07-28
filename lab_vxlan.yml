@@ -1,4 +1,4 @@
-name: vxlan-evpn-l2
+name: vxlan-evpn-irb
 topology: 
   nodes:
     spine1:

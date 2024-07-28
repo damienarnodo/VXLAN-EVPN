@@ -9,6 +9,10 @@
 
 This project provides a hands-on lab environment for understanding and experimenting with VXLAN-EVPN (Ethernet VPN) technology. Using ContainerLab, the lab sets up a VXLAN topology featuring 1 spine and 2 leaves nodes. The lab can be deployed directly on a PC with ContainerLab installed or through a DevContainer environment.
 
+Here is a schema of the topology:
+
+![alt text](documentation/assets/images/VXLAN.svg)
+
 ## Project Structure
 
 The project directory is structured as follows:
@@ -30,22 +34,44 @@ The project directory is structured as follows:
    Open the project in a compatible IDE (like Visual Studio Code) and start the DevContainer environment.
 
 2. **ContainerLab Setup:**
-   - Direct Installation: Install ContainerLab on your host machine.
-   - Via Terraform, documentation avalaible [here](https://github.com/MasqAs/AWS-ContainerLab-Deployment)
+   - Direct Installation: Install ContainerLab on your host machine. Follow the [official installation guide](https://containerlab.dev/install/).
+   - Via Terraform: Documentation available [here](https://github.com/MasqAs/AWS-ContainerLab-Deployment).
 
 3. **Start the Lab:**
-   - Navigate to the project directory.
-   - Add Arista image to Docker `docker import network_images/cEOS64-lab-4.32.0.1F.tar.xz ceos:4.32.0.1F`
-   - Run `sudo containerlab deploy -t lab_vxlan.yml` to deploy the lab topology.
+    1. Navigate to the project directory.
+    2. Add the Arista image to Docker:
+
+        ```bash
+        docker import network_images/cEOS64-lab-4.32.0.1F.tar.xz ceos:4.32.0.1F
+        ```
+
+    3. Deploy the lab topology:
+
+        ```bash
+        sudo containerlab deploy -t lab_vxlan.yml
+        ```
 
 ## Usage
 
-- Once the lab is deployed, you can access the individual nodes (spines and leaves) via CLI or SSH to configure and test VXLAN-EVPN functionalities.
-- Use the `hosts` directory to modify or apply specific configurations.
+- Once the lab is deployed, you can access the individual nodes (spines and leaves) via CLI or SSH to configure and test VXLAN-EVPN functionalities.  
+- Use the `hosts` directory to modify or apply specific configurations for end user hosts
+- To list the nodes deployed via the `lab_vxlan.yml`:
+
+   ```bash
+   containerlab inspect --name vxlan-evpn-irb
+   ````
+
+- Example command to configure a VXLAN interface:
+
+    ```bash
+    show bgp summary
+    ```
+
+    The configurations to apply on each node are listed [here](documentation/eos_configuration).
 
 ## Known Issues
 
-On Alpine Linux hosts 1 and 2, it is necessary to install the vlan package:
+To install the VLAN package on Alpine Linux hosts 1 and 2, follow these steps:
 
 ```bash
 apk add vlan
